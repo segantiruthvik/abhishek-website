@@ -78,7 +78,7 @@ const TestimonialsSection = () => {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-b from-cream/5 via-off-white/10 to-deep-indigo relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-b from-deep-indigo via-midnight-blue to-deep-indigo relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-spiritual-gold rounded-full blur-3xl" />
@@ -120,7 +120,7 @@ const TestimonialsSection = () => {
             What Clients Say
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-spiritual-gold to-transparent mx-auto mb-8" />
-          <p className="text-cream/90 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-cream text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Real stories of transformation and healing from people whose lives have been 
             positively changed through spiritual guidance and divine wisdom.
           </p>

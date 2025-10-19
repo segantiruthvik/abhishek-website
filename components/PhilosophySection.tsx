@@ -50,7 +50,7 @@ const PhilosophySection = () => {
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-b from-off-white via-cream/20 to-deep-indigo relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-b from-deep-indigo via-midnight-blue to-deep-indigo relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-spiritual-gold rounded-full blur-3xl" />
@@ -69,7 +69,7 @@ const PhilosophySection = () => {
             My Philosophy & Approach
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-spiritual-gold to-transparent mx-auto mb-8" />
-          <p className="text-cream/90 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-cream text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Every reading is a sacred journey of discovery, combining ancient wisdom with practical guidance 
             to help you align with your highest potential.
           </p>

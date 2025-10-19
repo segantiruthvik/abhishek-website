@@ -191,8 +191,8 @@ const ExpertiseSection = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "15+", label: "Years Experience" },
-              { number: "1000+", label: "Clients Helped" },
+              { number: "4+", label: "Years Experience" },
+              { number: "2000+", label: "Clients Helped" },
               { number: "95%", label: "Success Rate" },
               { number: "24/7", label: "Support Available" },
             ].map((stat, index) => (

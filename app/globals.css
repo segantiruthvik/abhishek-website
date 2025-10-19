@@ -5,11 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --deep-indigo: #1a1b3a;
-  --midnight-blue: #2d1b69;
-  --spiritual-gold: #d4af37;
-  --cream: #f5f5dc;
-  --off-white: #fefefe;
+  --deep-indigo: #0f0f23;
+  --midnight-blue: #1a1a2e;
+  --spiritual-gold: #f4d03f;
+  --cream: #f8f9fa;
+  --off-white: #ffffff;
+  --light-gray: #e9ecef;
+  --dark-gray: #495057;
 }
 
 * {

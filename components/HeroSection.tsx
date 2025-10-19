@@ -73,7 +73,7 @@ const HeroSection = () => {
           className="mb-8"
         >
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-gradient-gold mb-4">
-            Abhishek
+            Abhishek Chakinala
           </h1>
           <motion.div
             initial={{ opacity: 0 }}
@@ -148,7 +148,7 @@ const HeroSection = () => {
             className="btn-primary glow-gold relative overflow-hidden group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <span className="relative z-10">Book a Session</span>
             <motion.div

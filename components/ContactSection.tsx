@@ -54,7 +54,7 @@ Please let me know your available slots. Thank you!`
       description: "Quick responses and instant booking",
       action: "Chat Now",
       color: "from-green-500 to-green-600",
-      href: "https://wa.me/919876543210",
+      href: "https://wa.me/919966907000",
     },
     {
       icon: Mail,
@@ -70,12 +70,12 @@ Please let me know your available slots. Thank you!`
       description: "Direct voice consultation",
       action: "Call Now",
       color: "from-purple-500 to-purple-600",
-      href: "tel:+919876543210",
+      href: "tel:+919966907000",
     },
   ]
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-deep-indigo via-cream/5 to-off-white relative overflow-hidden">
+    <section id="contact" className="section-padding bg-gradient-to-b from-deep-indigo via-midnight-blue to-deep-indigo relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-40 h-40 bg-spiritual-gold rounded-full blur-3xl" />
@@ -105,7 +105,7 @@ Please let me know your available slots. Thank you!`
             Connect With Me
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-spiritual-gold to-transparent mx-auto mb-8" />
-          <p className="text-deep-indigo text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-cream text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             If you seek clarity, healing, and divine alignment, I'm here to guide you on your spiritual journey. 
             Choose the method that feels most comfortable for you.
           </p>
@@ -119,7 +119,7 @@ Please let me know your available slots. Thank you!`
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <h3 className="font-serif text-2xl font-bold text-deep-indigo mb-8">
+            <h3 className="font-serif text-2xl font-bold text-cream mb-8">
               Choose Your Preferred Method
             </h3>
             
@@ -143,10 +143,10 @@ Please let me know your available slots. Thank you!`
                       <method.icon className="w-7 h-7 text-white" />
                     </motion.div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-deep-indigo text-lg mb-1">
+                      <h4 className="font-semibold text-dark-gray text-lg mb-1">
                         {method.title}
                       </h4>
-                      <p className="text-deep-indigo/70 text-sm mb-2">
+                      <p className="text-dark-gray/80 text-sm mb-2">
                         {method.description}
                       </p>
                       <span className="inline-block px-3 py-1 bg-spiritual-gold/20 text-spiritual-gold text-xs rounded-full font-medium">
@@ -167,9 +167,9 @@ Please let me know your available slots. Thank you!`
             >
               <div className="flex items-center space-x-3 mb-4">
                 <Clock className="w-5 h-5 text-spiritual-gold" />
-                <h4 className="font-semibold text-deep-indigo">Availability</h4>
+                <h4 className="font-semibold text-dark-gray">Availability</h4>
               </div>
-              <div className="space-y-2 text-sm text-deep-indigo/80">
+              <div className="space-y-2 text-sm text-dark-gray/80">
                 <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
                 <p>Saturday: 10:00 AM - 6:00 PM</p>
                 <p>Sunday: 11:00 AM - 5:00 PM</p>
@@ -185,7 +185,7 @@ Please let me know your available slots. Thank you!`
             transition={{ duration: 0.8, delay: 0.4 }}
             className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-spiritual-gold/20"
           >
-            <h3 className="font-serif text-2xl font-bold text-deep-indigo mb-6">
+            <h3 className="font-serif text-2xl font-bold text-dark-gray mb-6">
               Send a Message
             </h3>
             
@@ -196,17 +196,17 @@ Please let me know your available slots. Thank you!`
                 className="text-center py-8"
               >
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h4 className="font-semibold text-deep-indigo text-lg mb-2">
+                <h4 className="font-semibold text-dark-gray text-lg mb-2">
                   Message Sent!
                 </h4>
-                <p className="text-deep-indigo/70">
+                <p className="text-dark-gray/80">
                   Thank you for reaching out. I'll get back to you soon.
                 </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-deep-indigo mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-dark-gray mb-2">
                     Full Name *
                   </label>
                   <input
@@ -222,7 +222,7 @@ Please let me know your available slots. Thank you!`
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-deep-indigo mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-dark-gray mb-2">
                     Email Address *
                   </label>
                   <input
@@ -238,7 +238,7 @@ Please let me know your available slots. Thank you!`
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-deep-indigo mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-dark-gray mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -254,7 +254,7 @@ Please let me know your available slots. Thank you!`
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-deep-indigo mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-dark-gray mb-2">
                     Your Message *
                   </label>
                   <textarea
@@ -278,7 +278,7 @@ Please let me know your available slots. Thank you!`
                   Send Message via WhatsApp
                 </motion.button>
 
-                <p className="text-xs text-deep-indigo/60 text-center">
+                <p className="text-xs text-dark-gray/70 text-center">
                   By sending a message, you agree to our privacy policy and terms of service.
                 </p>
               </form>

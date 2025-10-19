@@ -15,10 +15,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Abhishek - Spiritual Guide & Astrologer',
+  title: 'Abhishek Chakinala - Spiritual Guide & Astrologer',
   description: 'Precise Predictions | Deep Intuition | Real Transformation. Expert astrological guidance with detailed remedies and spiritual healing.',
   keywords: 'astrology, spiritual guidance, vedic astrology, remedies, spiritual healing, divine alignment',
-  authors: [{ name: 'Abhishek' }],
+  authors: [{ name: 'Abhishek Chakinala' }],
   viewport: 'width=device-width, initial-scale=1',
 }
 
