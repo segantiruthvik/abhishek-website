@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --deep-indigo: #1a1b3a;
+  --midnight-blue: #2d1b69;
+  --spiritual-gold: #d4af37;
+  --cream: #f5f5dc;
+  --off-white: #fefefe;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--deep-indigo);
+  color: var(--off-white);
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-playfair);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-indigo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--spiritual-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8941f;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Custom glow effects */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.glow-gold:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+/* Starfield background animation */
+@keyframes starfield {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+.starfield {
+  animation: starfield 20s linear infinite;
+}
+
+/* Parallax effect */
+.parallax {
+  will-change: transform;
+}
+
+/* Smooth fade transitions */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-semibold px-8 py-3 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply border-2 border-spiritual-gold text-spiritual-gold font-semibold px-8 py-3 rounded-full hover:bg-spiritual-gold hover:text-deep-indigo transition-all duration-300;
+}
+
+/* Section spacing */
+.section-padding {
+  @apply py-20 px-4 md:px-8 lg:px-16;
+}
+
+/* Container max width */
+.container-custom {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Text gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #d4af37, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-white {
+  background: linear-gradient(135deg, #ffffff, #f5f5dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
