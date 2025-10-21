@@ -35,13 +35,6 @@ const RemediesSection = () => {
       color: "from-orange-500 to-red-600",
     },
     {
-      icon: Sparkles,
-      title: "Gemstone Therapy",
-      description: "Healing crystals and gemstones that channel planetary energies to restore balance and harmony.",
-      details: "Personalized gemstone recommendations based on your astrological chart and healing needs.",
-      color: "from-emerald-500 to-teal-600",
-    },
-    {
       icon: Heart,
       title: "Pooja (Worship)",
       description: "Devotional practices that strengthen your connection with divine forces for guidance and support.",
@@ -173,33 +166,6 @@ const RemediesSection = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-spiritual-gold/20 max-w-2xl mx-auto">
-            <div className="absolute top-4 left-4 w-6 h-6 bg-spiritual-gold/20 rounded-full" />
-            <div className="absolute bottom-4 right-4 w-4 h-4 bg-spiritual-gold/10 rounded-full" />
-            
-            <h3 className="font-serif text-2xl font-bold text-gradient-gold mb-4">
-              Ready for Transformation?
-            </h3>
-            <p className="text-cream/80 mb-6 leading-relaxed">
-              Let's create a personalized remedy plan that addresses your specific needs and brings lasting positive change to your life.
-            </p>
-            <motion.button
-              className="btn-primary glow-gold"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get Your Personalized Remedies
-            </motion.button>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -65,13 +65,13 @@ const PhilosophySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient-gold mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-black text-gradient-gold mb-6 drop-shadow-2xl">
             My Philosophy & Approach
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-spiritual-gold to-transparent mx-auto mb-8" />
-          <p className="text-cream text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Every reading is a sacred journey of discovery, combining ancient wisdom with practical guidance 
-            to help you align with your highest potential.
+          <p className="text-cream font-semibold text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Every reading is a <span className="text-spiritual-gold font-bold">sacred journey</span> of discovery, combining <span className="text-spiritual-gold font-bold">ancient wisdom</span> with <span className="text-spiritual-gold font-bold">practical guidance</span> 
+            to help you align with your <span className="text-spiritual-gold font-bold">highest potential</span>.
           </p>
         </motion.div>
 
@@ -94,10 +94,10 @@ const PhilosophySection = () => {
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="font-serif text-xl font-bold text-gradient-white mb-4 text-center">
+                <h3 className="font-serif text-xl font-black text-gradient-white mb-4 text-center drop-shadow-lg">
                   {principle.title}
                 </h3>
-                <p className="text-cream/80 text-center leading-relaxed">
+                <p className="text-cream font-semibold text-center leading-relaxed">
                   {principle.description}
                 </p>
 
@@ -123,11 +123,11 @@ const PhilosophySection = () => {
             <div className="absolute top-4 left-4 w-8 h-8 bg-spiritual-gold/20 rounded-full" />
             <div className="absolute bottom-4 right-4 w-6 h-6 bg-spiritual-gold/10 rounded-full" />
             
-            <blockquote className="font-serif text-2xl md:text-3xl text-gradient-gold italic leading-relaxed">
-              "True transformation begins when ancient wisdom meets modern understanding, 
-              creating a bridge between your current reality and your highest potential."
+            <blockquote className="font-serif text-2xl md:text-3xl text-gradient-gold italic leading-relaxed font-bold">
+              "True transformation begins when <span className="text-white font-black">ancient wisdom</span> meets <span className="text-white font-black">modern understanding</span>, 
+              creating a bridge between your <span className="text-white font-black">current reality</span> and your <span className="text-white font-black">highest potential</span>."
             </blockquote>
-            <cite className="block mt-6 text-cream/70 text-lg">— Abhishek</cite>
+            <cite className="block mt-6 text-cream font-bold text-lg">— Abhishek</cite>
           </div>
         </motion.div>
       </div>

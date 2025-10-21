@@ -13,7 +13,6 @@ const ContactSection = () => {
 
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     message: '',
   })
@@ -30,18 +29,23 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Create WhatsApp message
-    const message = `Hello Abhishek! I'm interested in booking a session.
+    const message = `Namaste Abhishek! 🙏
 
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
+I visited your website and I am interested in booking a consultation session.
 
-Message: ${formData.message}
+📋 *Personal Details:*
+• Name: ${formData.name}
+• Phone: ${formData.phone}
 
-Please let me know your available slots. Thank you!`
+💬 *Message:*
+${formData.message}
+
+Please let me know your available slots and the booking process.
+
+Thank you for your time and guidance.`
     
     const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/919876543210?text=${encodedMessage}`
+    const whatsappUrl = `https://wa.me/919966907000?text=${encodedMessage}`
     
     window.open(whatsappUrl, '_blank')
     setIsSubmitted(true)
@@ -51,23 +55,15 @@ Please let me know your available slots. Thank you!`
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      description: "Quick responses and instant booking",
+      description: "Instant responses & seamless booking experience",
       action: "Chat Now",
       color: "from-green-500 to-green-600",
       href: "https://wa.me/919966907000",
     },
     {
-      icon: Mail,
-      title: "Email",
-      description: "Detailed consultations via email",
-      action: "Send Email",
-      color: "from-blue-500 to-blue-600",
-      href: "mailto:abhishek@spiritualguide.com",
-    },
-    {
       icon: Phone,
       title: "Phone Call",
-      description: "Direct voice consultation",
+      description: "Direct voice consultation & personalized guidance",
       action: "Call Now",
       color: "from-purple-500 to-purple-600",
       href: "tel:+919966907000",
@@ -101,12 +97,12 @@ Please let me know your available slots. Thank you!`
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient-gold mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-black text-gradient-gold mb-6 drop-shadow-2xl">
             Connect With Me
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-spiritual-gold to-transparent mx-auto mb-8" />
-          <p className="text-cream text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            If you seek clarity, healing, and divine alignment, I'm here to guide you on your spiritual journey. 
+          <p className="text-cream font-semibold text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            If you seek <span className="text-spiritual-gold font-bold">clarity</span>, <span className="text-spiritual-gold font-bold">healing</span>, and <span className="text-spiritual-gold font-bold">divine alignment</span>, I'm here to guide you on your <span className="text-spiritual-gold font-bold">spiritual journey</span>. 
             Choose the method that feels most comfortable for you.
           </p>
         </motion.div>
@@ -119,7 +115,7 @@ Please let me know your available slots. Thank you!`
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            <h3 className="font-serif text-2xl font-bold text-cream mb-8">
+            <h3 className="font-serif text-2xl font-black text-cream mb-8 drop-shadow-lg">
               Choose Your Preferred Method
             </h3>
             
@@ -143,13 +139,13 @@ Please let me know your available slots. Thank you!`
                       <method.icon className="w-7 h-7 text-white" />
                     </motion.div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-dark-gray text-lg mb-1">
+                      <h4 className="font-black text-dark-gray text-lg mb-1">
                         {method.title}
                       </h4>
-                      <p className="text-dark-gray/80 text-sm mb-2">
+                      <p className="text-dark-gray font-semibold text-sm mb-2">
                         {method.description}
                       </p>
-                      <span className="inline-block px-3 py-1 bg-spiritual-gold/20 text-spiritual-gold text-xs rounded-full font-medium">
+                      <span className="inline-block px-3 py-1 bg-deep-indigo text-white text-xs rounded-full font-black border border-spiritual-gold/30">
                         {method.action}
                       </span>
                     </div>
@@ -167,13 +163,13 @@ Please let me know your available slots. Thank you!`
             >
               <div className="flex items-center space-x-3 mb-4">
                 <Clock className="w-5 h-5 text-spiritual-gold" />
-                <h4 className="font-semibold text-dark-gray">Availability</h4>
+                <h4 className="font-black text-dark-gray">Availability</h4>
               </div>
-              <div className="space-y-2 text-sm text-dark-gray/80">
-                <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
-                <p>Saturday: 10:00 AM - 6:00 PM</p>
-                <p>Sunday: 11:00 AM - 5:00 PM</p>
-                <p className="text-spiritual-gold font-medium">Emergency consultations available</p>
+              <div className="space-y-2 text-sm text-dark-gray font-semibold">
+                <p>Monday - Friday: <span className="text-deep-indigo font-black">9:00 AM - 8:00 PM</span></p>
+                <p>Saturday: <span className="text-deep-indigo font-black">10:00 AM - 6:00 PM</span></p>
+                <p>Sunday: <span className="text-deep-indigo font-black">11:00 AM - 5:00 PM</span></p>
+                <p className="text-deep-indigo font-black">Emergency consultations available</p>
               </div>
             </motion.div>
           </motion.div>
@@ -185,7 +181,7 @@ Please let me know your available slots. Thank you!`
             transition={{ duration: 0.8, delay: 0.4 }}
             className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-spiritual-gold/20"
           >
-            <h3 className="font-serif text-2xl font-bold text-dark-gray mb-6">
+            <h3 className="font-serif text-2xl font-black text-dark-gray mb-6 drop-shadow-lg">
               Send a Message
             </h3>
             
@@ -196,17 +192,17 @@ Please let me know your available slots. Thank you!`
                 className="text-center py-8"
               >
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h4 className="font-semibold text-dark-gray text-lg mb-2">
+                <h4 className="font-black text-dark-gray text-lg mb-2">
                   Message Sent!
                 </h4>
-                <p className="text-dark-gray/80">
+                <p className="text-dark-gray font-semibold">
                   Thank you for reaching out. I'll get back to you soon.
                 </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-dark-gray mb-2">
+                  <label htmlFor="name" className="block text-sm font-bold text-dark-gray mb-2">
                     Full Name *
                   </label>
                   <input
@@ -216,29 +212,14 @@ Please let me know your available slots. Thank you!`
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-spiritual-gold/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-spiritual-gold/50 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border-2 border-spiritual-gold/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-spiritual-gold/50 focus:border-spiritual-gold transition-all duration-300 text-dark-gray font-semibold placeholder-dark-gray/70"
                     placeholder="Enter your full name"
                   />
                 </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-dark-gray mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-spiritual-gold/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-spiritual-gold/50 focus:border-transparent transition-all duration-300"
-                    placeholder="Enter your email address"
-                  />
-                </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-dark-gray mb-2">
+                  <label htmlFor="phone" className="block text-sm font-bold text-dark-gray mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -248,13 +229,13 @@ Please let me know your available slots. Thank you!`
                     required
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-spiritual-gold/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-spiritual-gold/50 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border-2 border-spiritual-gold/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-spiritual-gold/50 focus:border-spiritual-gold transition-all duration-300 text-dark-gray font-semibold placeholder-dark-gray/70"
                     placeholder="Enter your phone number"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-dark-gray mb-2">
+                  <label htmlFor="message" className="block text-sm font-bold text-dark-gray mb-2">
                     Your Message *
                   </label>
                   <textarea
@@ -264,14 +245,14 @@ Please let me know your available slots. Thank you!`
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-spiritual-gold/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-spiritual-gold/50 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border-2 border-spiritual-gold/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-spiritual-gold/50 focus:border-spiritual-gold transition-all duration-300 resize-none text-dark-gray font-semibold placeholder-dark-gray/70"
                     placeholder="Tell me about your situation and what guidance you're seeking..."
                   />
                 </div>
 
                 <motion.button
                   type="submit"
-                  className="w-full btn-primary glow-gold"
+                  className="w-full btn-primary glow-gold font-black text-lg py-4"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

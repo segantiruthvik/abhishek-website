@@ -2,8 +2,6 @@ import HeroSection from '@/components/HeroSection'
 import AboutSection from '@/components/AboutSection'
 import PhilosophySection from '@/components/PhilosophySection'
 import RemediesSection from '@/components/RemediesSection'
-import ExpertiseSection from '@/components/ExpertiseSection'
-import TestimonialsSection from '@/components/TestimonialsSection'
 import PricingSection from '@/components/PricingSection'
 import VisionSection from '@/components/VisionSection'
 import ContactSection from '@/components/ContactSection'
@@ -17,8 +15,6 @@ export default function Home() {
       <AboutSection />
       <PhilosophySection />
       <RemediesSection />
-      <ExpertiseSection />
-      <TestimonialsSection />
       <PricingSection />
       <VisionSection />
       <ContactSection />

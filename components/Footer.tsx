@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { Instagram, MessageCircle, Mail, Star, Sparkles } from 'lucide-react'
+import { MessageCircle, Star, Sparkles } from 'lucide-react'
 
 const Footer = () => {
   const [stars, setStars] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([])
@@ -23,22 +23,10 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      icon: Instagram,
-      href: "https://instagram.com/abhishek_spiritual",
-      label: "Instagram",
-      color: "hover:text-pink-500",
-    },
-    {
       icon: MessageCircle,
-      href: "https://wa.me/919876543210",
+      href: "https://wa.me/919966907000",
       label: "WhatsApp",
       color: "hover:text-green-500",
-    },
-    {
-      icon: Mail,
-      href: "mailto:abhishek@spiritualguide.com",
-      label: "Email",
-      color: "hover:text-blue-500",
     },
   ]
 
@@ -66,6 +54,106 @@ const Footer = () => {
             }}
           />
         ))}
+      </div>
+
+      {/* Planets and Celestial Bodies */}
+      <div className="absolute inset-0 opacity-20">
+        {/* Jupiter with Great Red Spot */}
+        <motion.div
+          className="absolute"
+          style={{ left: '20%', top: '30%' }}
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.4, 0.6, 0.4],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full relative shadow-lg">
+            {/* Jupiter's bands */}
+            <div className="absolute w-full h-0.5 bg-orange-300 top-1/3"></div>
+            <div className="absolute w-full h-0.5 bg-orange-300 top-2/3"></div>
+            {/* Great Red Spot */}
+            <div className="absolute w-1.5 h-1 bg-red-500 rounded-full" style={{ left: '60%', top: '40%' }}></div>
+          </div>
+        </motion.div>
+        
+        {/* Mars with Polar Ice Cap */}
+        <motion.div
+          className="absolute"
+          style={{ left: '60%', top: '40%' }}
+          animate={{
+            y: [0, -5, 0],
+            opacity: [0.5, 0.8, 0.5],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <div className="w-4 h-4 bg-gradient-to-r from-red-400 to-red-600 rounded-full relative shadow-lg">
+            {/* Polar ice cap */}
+            <div className="absolute w-3 h-0.5 bg-white rounded-full top-0"></div>
+            {/* Surface features */}
+            <div className="absolute w-0.5 h-0.5 bg-red-600 rounded-full" style={{ left: '30%', top: '60%' }}></div>
+            <div className="absolute w-0.3 h-0.3 bg-red-600 rounded-full" style={{ left: '70%', top: '40%' }}></div>
+          </div>
+        </motion.div>
+        
+        {/* Venus with Atmospheric Glow */}
+        <motion.div
+          className="absolute"
+          style={{ left: '80%', top: '60%' }}
+          animate={{
+            rotate: 360,
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          <div className="relative">
+            {/* Atmospheric glow */}
+            <div className="absolute w-7 h-7 bg-yellow-100 rounded-full opacity-30" style={{ left: '-12.5%', top: '-12.5%' }}></div>
+            {/* Venus body */}
+            <div className="w-5 h-5 bg-gradient-to-r from-yellow-200 to-yellow-300 rounded-full relative z-10 shadow-lg"></div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Constellations */}
+      <div className="absolute inset-0 opacity-10">
+        {/* Cassiopeia */}
+        <svg className="absolute" style={{ left: '15%', top: '60%', width: '60px', height: '40px' }}>
+          <motion.path
+            d="M10,20 L20,10 L30,20 L40,10 L50,20"
+            stroke="#d4af37"
+            strokeWidth="1"
+            fill="none"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}
+          />
+        </svg>
+        
+        {/* Leo */}
+        <svg className="absolute" style={{ left: '70%', top: '20%', width: '50px', height: '50px' }}>
+          <motion.path
+            d="M10,25 L20,15 L30,20 L35,35 L25,40 L15,35"
+            stroke="#d4af37"
+            strokeWidth="1"
+            fill="none"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", delay: 2 }}
+          />
+        </svg>
       </div>
 
       {/* Floating Spiritual Elements */}
@@ -97,12 +185,12 @@ const Footer = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="font-serif text-2xl font-bold text-gradient-gold mb-4">
+                <h3 className="font-serif text-2xl font-black text-gradient-gold mb-4 drop-shadow-lg">
                   Abhishek
                 </h3>
-                <p className="text-cream/80 leading-relaxed mb-6 max-w-md">
-                  Spiritual guide and astrologer dedicated to helping you discover your true purpose 
-                  and create lasting transformation through divine wisdom and practical guidance.
+                <p className="text-cream font-semibold leading-relaxed mb-6 max-w-md">
+                  Spiritual guide and astrologer dedicated to helping you discover your <span className="text-spiritual-gold font-bold">true purpose</span> 
+                  and create <span className="text-spiritual-gold font-bold">lasting transformation</span> through <span className="text-spiritual-gold font-bold">divine wisdom</span> and <span className="text-spiritual-gold font-bold">practical guidance</span>.
                 </p>
                 
                 {/* Social Links */}
@@ -135,10 +223,10 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="font-semibold text-gradient-white text-lg mb-4">
+              <h4 className="font-black text-spiritual-gold text-lg mb-4 text-center drop-shadow-lg">
                 Quick Links
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-center">
                 {[
                   { label: "About Me", href: "#about" },
                   { label: "Philosophy", href: "#philosophy" },
@@ -148,7 +236,7 @@ const Footer = () => {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-cream/70 hover:text-spiritual-gold transition-colors duration-300 text-sm"
+                      className="text-cream font-semibold hover:text-spiritual-gold transition-colors duration-300 text-sm"
                     >
                       {link.label}
                     </a>
@@ -164,17 +252,17 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h4 className="font-semibold text-gradient-white text-lg mb-4">
+              <h4 className="font-black text-spiritual-gold text-lg mb-4 text-center drop-shadow-lg">
                 Services
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-center">
                 {[
                   "Vedic Astrology Reading",
                   "Spiritual Guidance",
                   "Remedy Consultation",
                   "Life Transformation",
                 ].map((service) => (
-                  <li key={service} className="text-cream/70 text-sm">
+                  <li key={service} className="text-cream font-semibold text-sm">
                     {service}
                   </li>
                 ))}
@@ -198,7 +286,7 @@ const Footer = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               viewport={{ once: true }}
-              className="text-cream/60 text-sm"
+              className="text-cream font-semibold text-sm"
             >
               © 2024 Abhishek - Spiritual Guide & Astrologer. All rights reserved.
             </motion.p>
@@ -210,13 +298,13 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex space-x-6 text-sm"
             >
-              <a href="#" className="text-cream/60 hover:text-spiritual-gold transition-colors duration-300">
+              <a href="#" className="text-cream font-semibold hover:text-spiritual-gold transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="text-cream/60 hover:text-spiritual-gold transition-colors duration-300">
+              <a href="#" className="text-cream font-semibold hover:text-spiritual-gold transition-colors duration-300">
                 Terms of Service
               </a>
-              <a href="#" className="text-cream/60 hover:text-spiritual-gold transition-colors duration-300">
+              <a href="#" className="text-cream font-semibold hover:text-spiritual-gold transition-colors duration-300">
                 Disclaimer
               </a>
             </motion.div>

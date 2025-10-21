@@ -6,7 +6,17 @@ import { useEffect, useState } from 'react'
 
 const FloatingButtons = () => {
   const [isVisible, setIsVisible] = useState(false)
-  const freeConsultationMessage = "Hi Abhishek, I visited your website and I want to have a free 15 min horoscope consultation."
+  const freeConsultationMessage = `Namaste Abhishek! 🙏
+
+I visited your website and I am interested in your services.
+
+🎁 *Free Consultation Request:*
+• Service: 15-minute horoscope consultation
+• Type: Free session
+
+Please let me know if this offer is still available and how to proceed.
+
+Thank you for your time.`
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +35,17 @@ const FloatingButtons = () => {
     <>
       {/* WhatsApp Button - Bottom Right */}
       <motion.a
-        href={`https://wa.me/919966907000?text=${encodeURIComponent('Hi Abhishek! I want to contact you for consultation.')}`}
+        href={`https://wa.me/919966907000?text=${encodeURIComponent(`Namaste Abhishek! 🙏
+
+I visited your website and I am interested in your astrological services.
+
+📞 *Contact Request:*
+• Purpose: Consultation inquiry
+• Source: Website visit
+
+Please let me know the best way to connect with you for guidance.
+
+Thank you for your time.`)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"

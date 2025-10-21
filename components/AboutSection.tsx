@@ -74,26 +74,121 @@ const AboutSection = () => {
             className="space-y-6"
           >
             <div className="space-y-4">
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-gradient-gold">
+              <h2 className="font-serif text-4xl md:text-5xl font-black text-gradient-gold drop-shadow-2xl">
                 About Abhishek
               </h2>
               <div className="h-1 w-24 bg-gradient-to-r from-spiritual-gold to-transparent" />
             </div>
 
-            <div className="space-y-4 text-cream text-lg leading-relaxed">
-              <p>
-                With over 4+ years of dedicated practice in Vedic astrology and spiritual healing, 
-                I bring a unique blend of ancient wisdom and modern understanding to guide you 
+            <div className="space-y-6 text-cream text-lg leading-relaxed">
+              {/* Educational Background */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-spiritual-gold/20">
+                <h3 className="font-black text-spiritual-gold text-xl mb-4 flex items-center">
+                  🎓 Educational Excellence
+                </h3>
+                <div className="space-y-2">
+                  <p className="font-semibold">
+                    <span className="text-spiritual-gold font-bold">B.E Civil Engineering</span> & <span className="text-spiritual-gold font-bold">M.Sc. Economics</span>
+                  </p>
+                  <p className="font-semibold text-cream/90">
+                    🏛️ BITS Pilani
+                  </p>
+                </div>
+              </div>
+
+              {/* Creative Experience */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-spiritual-gold/20">
+                <h3 className="font-black text-spiritual-gold text-xl mb-4 flex items-center">
+                  🎬 Creative Experience
+                </h3>
+                <p className="font-semibold">
+                  Worked as <span className="text-spiritual-gold font-bold">Associate Director</span> in <span className="text-spiritual-gold font-bold">three feature film projects</span>, 
+                  bringing creative vision and leadership to cinematic storytelling.
+                </p>
+              </div>
+
+              {/* Astrology Journey */}
+              <p className="font-semibold">
+                With over <span className="text-spiritual-gold font-bold">4+ years</span> of dedicated practice in <span className="text-spiritual-gold font-bold">Vedic astrology</span> and <span className="text-spiritual-gold font-bold">spiritual healing</span>, 
+                I bring a unique blend of <span className="text-spiritual-gold font-bold">ancient wisdom</span> and modern understanding to guide you 
                 through life's challenges.
               </p>
-              <p>
-                My approach combines precise astrological analysis with intuitive guidance, 
-                providing not just predictions but practical remedies that create real, 
+
+              {/* Approach */}
+              <p className="font-semibold">
+                My approach combines <span className="text-spiritual-gold font-bold">precise astrological analysis</span> with <span className="text-spiritual-gold font-bold">intuitive guidance</span>, 
+                providing not just predictions but <span className="text-spiritual-gold font-bold">practical remedies</span> that create real, 
                 lasting transformation in your life.
               </p>
-              <p>
-                I believe that every individual has the power to align with their divine purpose, 
-                and my mission is to help you discover and embrace your true potential.
+
+              {/* Diverse Client Portfolio */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-spiritual-gold/20">
+                <h3 className="font-black text-spiritual-gold text-xl mb-4 flex items-center">
+                  🌟 Distinguished Client Portfolio
+                </h3>
+                <p className="font-black mb-6 text-lg">
+                  My clients span across <span className="text-spiritual-gold font-black">diverse professional fields</span>, including:
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">🏏</span>
+                    <span className="font-black text-cream">International Women's Cricket Players</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">🏛️</span>
+                    <span className="font-black text-cream">Civil Servants</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">👔</span>
+                    <span className="font-black text-cream">Government Officers</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">🎭</span>
+                    <span className="font-black text-cream">Actors & Writers</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">🎬</span>
+                    <span className="font-black text-cream">Directors & Producers</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">🎵</span>
+                    <span className="font-black text-cream">Singers</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">🎨</span>
+                    <span className="font-black text-cream">VFX Artists</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">📹</span>
+                    <span className="font-black text-cream">DoP's</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">🏛️</span>
+                    <span className="font-black text-cream">Political Leaders</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">💃</span>
+                    <span className="font-black text-cream">Dancers</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">⚙️</span>
+                    <span className="font-black text-cream">Engineers</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-deep-indigo/20 backdrop-blur-sm rounded-lg p-3 border border-spiritual-gold/30">
+                    <span className="text-spiritual-gold text-lg">💻</span>
+                    <span className="font-black text-cream">Software Professionals</span>
+                  </div>
+                </div>
+                <p className="font-black mt-6 text-lg text-spiritual-gold bg-deep-indigo/10 backdrop-blur-sm rounded-lg p-4 border border-spiritual-gold/20">
+                  💡 This <span className="text-cream font-black">diverse background</span> enables me to understand <span className="text-cream font-black">different life perspectives</span>, 
+                  making your horoscope reading more <span className="text-cream font-black">insightful and personalized</span>.
+                </p>
+              </div>
+
+              {/* Mission Statement */}
+              <p className="font-semibold">
+                I believe that every individual has the power to align with their <span className="text-spiritual-gold font-bold">divine purpose</span>, 
+                and my mission is to help you discover and embrace your <span className="text-spiritual-gold font-bold">true potential</span>.
               </p>
             </div>
 
@@ -108,8 +203,8 @@ const AboutSection = () => {
                   className="text-center p-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <achievement.icon className="w-8 h-8 text-spiritual-gold mx-auto mb-2" />
-                  <h4 className="font-semibold text-dark-gray text-sm mb-1">{achievement.title}</h4>
-                  <p className="text-dark-gray/80 text-xs">{achievement.description}</p>
+                  <h4 className="font-black text-dark-gray text-sm mb-1">{achievement.title}</h4>
+                  <p className="text-dark-gray font-semibold text-xs">{achievement.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -127,7 +222,7 @@ const AboutSection = () => {
           className="space-y-8"
         >
           <div className="text-center">
-            <h3 className="font-serif text-3xl font-bold text-cream mb-4">
+            <h3 className="font-serif text-3xl font-black text-cream mb-4 drop-shadow-lg">
               What People Say
             </h3>
             <div className="h-1 w-16 bg-gradient-to-r from-spiritual-gold to-transparent mx-auto" />
@@ -147,7 +242,7 @@ const AboutSection = () => {
                     <Star key={i} className="w-4 h-4 text-spiritual-gold fill-current" />
                   ))}
                 </div>
-                <p className="text-dark-gray/90 italic mb-4 leading-relaxed">
+                <p className="text-dark-gray font-semibold italic mb-4 leading-relaxed">
                   "{testimonial.text}"
                 </p>
                 <div className="flex items-center">
@@ -157,8 +252,8 @@ const AboutSection = () => {
                     </span>
                   </div>
                   <div>
-                    <p className="font-semibold text-dark-gray text-sm">{testimonial.name}</p>
-                    <p className="text-dark-gray/70 text-xs">Verified Client</p>
+                    <p className="font-black text-dark-gray text-sm">{testimonial.name}</p>
+                    <p className="text-dark-gray font-semibold text-xs">Verified Client</p>
                   </div>
                 </div>
                 
