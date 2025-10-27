@@ -79,18 +79,6 @@ const HomamImagesSection = () => {
       className="relative"
     >
       <div className="relative bg-gradient-to-br from-spiritual-gold/10 to-midnight-blue/10 rounded-2xl p-8 backdrop-blur-sm border border-spiritual-gold/30">
-        {/* Title */}
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mb-6"
-        >
-          <span className="font-serif text-2xl font-bold text-gradient-gold">
-            Real Homam Images
-          </span>
-        </motion.h3>
-
         {/* Image Container */}
         <div className="w-full h-80 bg-gradient-to-br from-spiritual-gold/10 to-midnight-blue/10 rounded-xl flex items-center justify-center relative overflow-hidden">
           {loading ? (

@@ -132,6 +132,8 @@ const PricingSection = () => {
   }
 
   const onTouchMove = (e: React.TouchEvent) => {
+    // Prevent default scrolling behavior
+    e.preventDefault()
     setTouchEnd(e.targetTouches[0].clientX)
     if (isDragging) {
       const currentX = e.targetTouches[0].clientX
@@ -170,7 +172,7 @@ const PricingSection = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-4 md:mb-16"
         >
           <h2 className="font-serif text-4xl md:text-5xl font-black text-gradient-gold mb-6 drop-shadow-2xl">
             Consultation Plans
@@ -253,7 +255,7 @@ Please let me know your available slots and the booking process.
 Thank you for your time.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-black py-3 px-6 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 glow-gold text-center relative z-10 drop-shadow-lg"
+                  className="w-full bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-black py-2.5 px-4 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 glow-gold text-center text-sm whitespace-nowrap relative z-10 drop-shadow-lg"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -278,6 +280,7 @@ Thank you for your time.`)}`}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
+            style={{ touchAction: 'pan-y' }}
           >
             <motion.div
               ref={scrollContainerRef}
@@ -356,7 +359,7 @@ Please let me know your available slots and the booking process.
 Thank you for your time.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-black py-2 px-4 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 glow-gold text-center text-sm flex-shrink-0 relative z-10 drop-shadow-lg"
+                        className="w-full bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-black py-2.5 px-4 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 glow-gold text-center text-sm whitespace-nowrap flex-shrink-0 relative z-10 drop-shadow-lg"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >

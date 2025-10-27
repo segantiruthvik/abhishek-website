@@ -253,7 +253,7 @@ const HeroSection = () => {
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium text-gradient-white mb-4">
             Spiritual Guide & Astrologer
           </h2>
-          <p className="text-lg md:text-xl text-cream/90 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-serif text-xl md:text-2xl font-bold text-gradient-white max-w-2xl mx-auto leading-relaxed">
             Precise Predictions | Deep Intuition | Real Transformation
           </p>
         </motion.div>
@@ -264,7 +264,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 1.4 }}
           className="mb-12"
         >
-          <div className="flex flex-wrap justify-center gap-4 text-cream/80 text-sm md:text-base">
+          <div className="flex flex-wrap justify-center gap-4 font-serif text-sm md:text-base font-bold text-gradient-white">
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -321,26 +321,6 @@ const HeroSection = () => {
           </motion.button>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 3 }}
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-spiritual-gold rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-spiritual-gold rounded-full mt-2"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

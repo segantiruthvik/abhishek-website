@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useState, useEffect, useRef } from 'react'
 import { Target, Brain, Zap, Heart, Eye, Shield } from 'lucide-react'
 
 const PhilosophySection = () => {
@@ -9,6 +10,12 @@ const PhilosophySection = () => {
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const autoScrollInterval = useRef<NodeJS.Timeout | null>(null)
+  const touchStartX = useRef<number | null>(null)
 
   const principles = [
     {
@@ -49,6 +56,76 @@ const PhilosophySection = () => {
     },
   ]
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!isPaused && inView) {
+      autoScrollInterval.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % principles.length)
+      }, 3000) // Change card every 3 seconds
+    }
+
+    return () => {
+      if (autoScrollInterval.current) {
+        clearInterval(autoScrollInterval.current)
+      }
+    }
+  }, [isPaused, inView, principles.length])
+
+  // Scroll to current index
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (container) {
+      const cardWidth = container.offsetWidth
+      const scrollPosition = currentIndex * cardWidth
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      })
+    }
+  }, [currentIndex])
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+    setIsPaused(true)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    // Prevent default scrolling behavior
+    e.preventDefault()
+    
+    const touchX = e.touches[0].clientX
+    const diff = touchStartX.current ? touchStartX.current - touchX : 0
+    
+    // Only allow visual drag feedback, don't update scroll position
+    // The actual card change happens on touch end
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const touchEndX = e.changedTouches[0].clientX
+    const diff = touchStartX.current ? touchStartX.current - touchEndX : 0
+    
+    // Only change one card at a time based on swipe direction
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        // Swiped right - go to next card
+        if (currentIndex < principles.length - 1) {
+          setCurrentIndex(currentIndex + 1)
+        }
+      } else {
+        // Swiped left - go to previous card
+        if (currentIndex > 0) {
+          setCurrentIndex(currentIndex - 1)
+        }
+      }
+    }
+    
+    touchStartX.current = null
+    // Resume auto-scroll after 5 seconds of inactivity
+    setTimeout(() => setIsPaused(false), 5000)
+  }
+
+
+
   return (
     <section className="section-padding bg-gradient-to-b from-deep-indigo via-midnight-blue to-deep-indigo relative overflow-hidden">
       {/* Background Elements */}
@@ -63,7 +140,7 @@ const PhilosophySection = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-4 md:mb-16"
         >
           <h2 className="font-serif text-4xl md:text-5xl font-black text-gradient-gold mb-6 drop-shadow-2xl">
             My Philosophy & Approach
@@ -75,7 +152,8 @@ const PhilosophySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Desktop Grid View */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {principles.map((principle, index) => (
             <motion.div
               key={principle.title}
@@ -112,12 +190,88 @@ const PhilosophySection = () => {
           ))}
         </div>
 
+        {/* Mobile Carousel */}
+        <div className="md:hidden relative">
+
+          {/* Scrollable Container */}
+          <div
+            ref={scrollContainerRef}
+            className="flex snap-x snap-mandatory overflow-x-hidden gap-4 scrollbar-hide pb-4"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              touchAction: 'pan-y' 
+            }}
+          >
+            {principles.map((principle, index) => (
+              <div
+                key={principle.title}
+                className="flex-none snap-center w-full"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group relative"
+                >
+                  <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-spiritual-gold/20 hover:border-spiritual-gold/40 transition-all duration-300 hover:shadow-xl hover:shadow-spiritual-gold/20 h-full">
+                    {/* Icon Container */}
+                    <motion.div
+                      className={`w-16 h-16 bg-gradient-to-r ${principle.color} rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300`}
+                      whileHover={{ rotate: 5 }}
+                    >
+                      <principle.icon className="w-8 h-8 text-white" />
+                    </motion.div>
+
+                    {/* Content */}
+                    <h3 className="font-serif text-xl font-black text-gradient-white mb-4 text-center drop-shadow-lg">
+                      {principle.title}
+                    </h3>
+                    <p className="text-cream font-semibold text-center leading-relaxed">
+                      {principle.description}
+                    </p>
+
+                    {/* Hover Glow Effect */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-spiritual-gold" />
+                    
+                    {/* Corner Decoration */}
+                    <div className="absolute top-4 right-4 w-2 h-2 bg-spiritual-gold/50 rounded-full group-hover:bg-spiritual-gold transition-colors duration-300" />
+                    <div className="absolute bottom-4 left-4 w-1 h-1 bg-spiritual-gold/30 rounded-full group-hover:bg-spiritual-gold transition-colors duration-300" />
+                  </div>
+                </motion.div>
+              </div>
+            ))}
+          </div>
+
+          {/* Indicators */}
+          <div className="flex justify-center gap-2 mt-4">
+            {principles.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setCurrentIndex(index)
+                  setIsPaused(true)
+                  setTimeout(() => setIsPaused(false), 5000)
+                }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'bg-spiritual-gold w-8'
+                    : 'bg-spiritual-gold/30 hover:bg-spiritual-gold/50'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Bottom Quote */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-16"
+          className="text-center mt-4 md:mt-16"
         >
           <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-spiritual-gold/20 max-w-4xl mx-auto">
             <div className="absolute top-4 left-4 w-8 h-8 bg-spiritual-gold/20 rounded-full" />
