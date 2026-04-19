@@ -261,7 +261,7 @@ Thank you for your time.`)}`}
                       
                       <div className="text-center mb-4">
                         <div className="text-2xl font-black text-spiritual-gold mb-1 drop-shadow-lg">
-                          ₹{plan.price}
+                          ${plan.price}
                         </div>
                         <div className="text-cream font-semibold text-sm">
                           {plan.duration} Session
@@ -299,7 +299,7 @@ I visited your website and I am interested in booking a consultation.
 📋 *Consultation Details:*
 • Plan: ${plan.title}
 • Duration: ${plan.duration}
-• Investment: ₹${plan.price}
+• Investment: $${plan.price}
 
 Please let me know your available slots and the booking process.
 
