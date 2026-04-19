@@ -157,7 +157,7 @@ const PricingSection = () => {
                 
                 <div className="text-center mb-6">
                   <div className="text-4xl font-black text-spiritual-gold mb-2 drop-shadow-lg">
-                    ₹{plan.price}
+                      ${plan.price}
                   </div>
                   <div className="text-cream font-semibold text-lg">
                     {plan.duration} Session
