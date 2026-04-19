@@ -15,92 +15,39 @@ const PricingSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   const pricingPlans = [
-    {
-      id: 1,
-      title: "General Consultation",
-      price: "699",
-      duration: "30 min",
-      icon: Clock,
-      features: [
-        "Career & Business guidance",
-        "Love & Marriage insights", 
-        "Finance & Wealth planning",
-        "Health & Wellness advice",
-        "Family & Relationships support"
-      ],
-      color: "from-blue-500 to-blue-600",
-      delay: 0,
-      description: "Quick overview of current challenges and immediate guidance"
-    },
-    {
-      id: 2,
-      title: "Detailed 5-Year Outlook",
-      price: "899", 
-      duration: "45 min",
-      icon: Star,
-      features: [
-        "Comprehensive 5-year life blueprint",
-        "Career & Business trajectory planning",
-        "Love & Marriage timeline analysis",
-        "Finance & Wealth accumulation strategy",
-        "Health & Wellness roadmap"
-      ],
-      color: "from-purple-500 to-purple-600",
-      delay: 0.1,
-      description: "In-depth analysis with strategic planning for next 5 years"
-    },
-    {
-      id: 3,
-      title: "Extensive 15-Year Blueprint",
-      price: "1099",
-      duration: "1 hr",
-      icon: Target,
-      features: [
-        "Complete 15-year life transformation plan",
-        "Career & Business empire building strategy",
-        "Love & Marriage long-term compatibility",
-        "Finance & Wealth mastery approach",
-        "Advanced spiritual guidance & remedies"
-      ],
-      color: "from-rose-500 to-rose-600",
-      delay: 0.2,
-      description: "Holistic life blueprint with advanced spiritual guidance"
-    },
-    {
-      id: 4,
-      title: "D9 Marriage Consultation",
-      price: "1111",
-      duration: "1 hr",
-      icon: Heart,
-      features: [
-        "D9 Chart Analysis (Navamsa) for marriage",
-        "Spouse nature & compatibility assessment",
-        "Marriage timing & quality prediction",
-        "Planetary strength & spiritual evolution",
-        "Dharma & life purpose guidance"
-      ],
-      color: "from-pink-500 to-rose-600",
-      delay: 0.3,
-      description: "Specialized marriage-focused astrology using D9 chart analysis"
-    },
-    {
-      id: 5,
-      title: "D10 Career Consultation",
-      price: "1499",
-      duration: "1 hr",
-      icon: Briefcase,
-      features: [
-        "D10 Chart Analysis (Dashamsa) for career",
-        "Nakshatra Analysis for deeper insights",
-        "Mahadasha/Antardasha timing analysis",
-        "Career shift predictions & opportunities",
-        "Professional image & reputation guidance"
-      ],
-      color: "from-emerald-500 to-emerald-600",
-      delay: 0.4,
-      description: "Specialized career-focused astrology using D10 chart analysis"
-    },
-  ]
+  {
+    id: 1,
+    title: "General Consultation",
+    price: "49",
+    duration: "1 hr",
+    icon: Clock,  // or whatever icon you want
+    features: [
+      "Personalized advice on your key questions",
+      "Covers career, relationships, health, and more",
+      "Practical remedies & recommendations",
+      "Live Q&A with a professional",
+    ],
+    color: "from-blue-500 to-blue-600",
+    delay: 0,
+    description: "A one-hour session for clarity on your areas of concern."
+  },
+  {
+    id: 2,
+    title: "Advance Consultation",
+    price: "90",
+    duration: "2 hr",
+    icon: Star, // You may keep the icon or choose a new one
+    features: [
+      "In-depth, extended session covering your life in detail",
+      "Comprehensive chart analysis",
+      "Long-term planning and advanced remedies",
+      "Time for multiple topics and deeper guidance",
+    ],
+    color: "from-purple-500 to-purple-600",
+    delay: 0.1,
+    description: "A thorough two-hour consultation for advanced insight and planning."
+  }
+]
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % pricingPlans.length)
