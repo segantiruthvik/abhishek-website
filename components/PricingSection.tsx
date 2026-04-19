@@ -195,7 +195,7 @@ I visited your website and I am interested in booking a consultation.
 📋 *Consultation Details:*
 • Plan: ${plan.title}
 • Duration: ${plan.duration}
-• Investment: ₹${plan.price}
+• Investment: $${plan.price}
 
 Please let me know your available slots and the booking process.
 
