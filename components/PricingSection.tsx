@@ -2,36 +2,36 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { CheckCircle, Clock, ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState, useRef } from 'react'
+import { CheckCircle, Clock, Star, Target, Briefcase, Heart, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
 
 const PricingSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
-
+  
   const [currentSlide, setCurrentSlide] = useState(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   const pricingPlans = [
-    {
-      id: 1,
-      title: "General Consultation",
-      price: "40",
-      duration: "45 min",
-      icon: Clock,
-      features: [
-        "Personalized advice on your key questions",
-        "Covers career, relationships, health, and more",
-        "Practical remedies & recommendations",
-        "Live Q&A with a professional",
-      ],
-      color: "from-blue-500 to-blue-600",
-      delay: 0,
-      description: "A one-hour session for clarity on your areas of concern."
-    }
-  ]
+  {
+    id: 1,
+    title: "General Consultation",
+    price: "40",
+    duration: "45 min",
+    icon: Clock,  // or whatever icon you want
+    features: [
+      "Personalized advice on your key questions",
+      "Covers career, relationships, health, and more",
+      "Practical remedies & recommendations",
+      "Live Q&A with a professional",
+    ],
+    color: "from-blue-500 to-blue-600",
+    delay: 0,
+    description: "A one-hour session for clarity on your areas of concern."
+  }
+]
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % pricingPlans.length)
@@ -63,6 +63,7 @@ const PricingSection = () => {
   }
 
   const onTouchMove = (e: React.TouchEvent) => {
+    // Prevent default scrolling behavior
     e.preventDefault()
     setTouchEnd(e.targetTouches[0].clientX)
     if (isDragging) {
@@ -83,6 +84,7 @@ const PricingSection = () => {
     if (isRightSwipe) {
       prevSlide()
     }
+    
     setIsDragging(false)
     setDragOffset(0)
   }
@@ -108,13 +110,13 @@ const PricingSection = () => {
           </h2>
           <div className="h-1 w-32 bg-gradient-to-r from-spiritual-gold to-transparent mx-auto mb-8" />
           <p className="text-cream font-semibold text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Choose the plan that best suits your needs for <span className="text-spiritual-gold font-bold">clarity</span>, <span className="text-spiritual-gold font-bold">guidance</span>, and <span className="text-spiritual-gold font-bold">insight</span>.
+            Choose the plan that best suits your needs for <span className="text-spiritual-gold font-bold">clarity</span>, <span className="text-spiritual-gold font-bold">guidance</span>, and <span className="text-spiritual-gold font-bold">transformation</span>.
             All plans cover comprehensive areas of life with personalized spiritual guidance.
           </p>
         </motion.div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-center">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={plan.id}
@@ -131,21 +133,25 @@ const PricingSection = () => {
                 >
                   <plan.icon className="w-8 h-8 text-white" />
                 </motion.div>
+
                 {/* Content */}
                 <h3 className="font-serif text-2xl font-bold text-gradient-white mb-4 text-center drop-shadow-lg">
                   {plan.title}
                 </h3>
+                
                 <div className="text-center mb-6">
                   <div className="text-4xl font-black text-spiritual-gold mb-2 drop-shadow-lg">
-                    ${plan.price}
+                      ${plan.price}
                   </div>
                   <div className="text-cream font-semibold text-lg">
                     {plan.duration} Session
                   </div>
                 </div>
+
                 <p className="text-cream font-medium text-center mb-6 leading-relaxed">
                   {plan.description}
                 </p>
+
                 {/* Features List */}
                 <div className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
@@ -163,6 +169,7 @@ const PricingSection = () => {
                     </motion.div>
                   ))}
                 </div>
+
                 {/* CTA Button */}
                 <motion.a
                   href={`https://wa.me/919966907000?text=${encodeURIComponent(`Namaste Abhishek! 🙏
@@ -179,14 +186,16 @@ Please let me know your available slots and the booking process.
 Thank you for your time.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-black py-2.5 px-4 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 block text-center"
+                  className="w-full bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-black py-2.5 px-4 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 glow-gold text-center text-sm whitespace-nowrap relative z-10 drop-shadow-lg"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   Book This Plan
                 </motion.a>
+
                 {/* Hover Glow Effect */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${plan.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                
                 {/* Corner Decorations */}
                 <div className="absolute top-4 right-4 w-2 h-2 bg-spiritual-gold/50 rounded-full group-hover:bg-spiritual-gold transition-colors duration-300" />
                 <div className="absolute bottom-4 left-4 w-1 h-1 bg-spiritual-gold/30 rounded-full group-hover:bg-spiritual-gold transition-colors duration-300" />
@@ -197,7 +206,7 @@ Thank you for your time.`)}`}
 
         {/* Mobile Carousel */}
         <div className="md:hidden relative">
-          <div
+          <div 
             className="overflow-hidden"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
@@ -206,8 +215,8 @@ Thank you for your time.`)}`}
           >
             <motion.div
               ref={scrollContainerRef}
-              className="flex transition-transform duration-300 ease-out justify-center"
-              style={{
+              className="flex transition-transform duration-300 ease-out"
+              style={{ 
                 transform: `translateX(calc(-${currentSlide * 75}% + ${isDragging ? dragOffset * 0.5 : 0}px))`,
                 transition: isDragging ? 'none' : 'transform 0.3s ease-out'
               }}
@@ -228,10 +237,12 @@ Thank you for your time.`)}`}
                       >
                         <plan.icon className="w-6 h-6 text-white" />
                       </motion.div>
+
                       {/* Content */}
                       <h3 className="font-serif text-lg font-bold text-gradient-white mb-3 text-center drop-shadow-lg">
                         {plan.title}
                       </h3>
+                      
                       <div className="text-center mb-4">
                         <div className="text-2xl font-black text-spiritual-gold mb-1 drop-shadow-lg">
                           ${plan.price}
@@ -240,9 +251,11 @@ Thank you for your time.`)}`}
                           {plan.duration} Session
                         </div>
                       </div>
+
                       <p className="text-cream font-medium text-center mb-4 leading-relaxed text-sm flex-shrink-0">
                         {plan.description}
                       </p>
+
                       {/* Features List */}
                       <div className="space-y-2 mb-6 flex-grow">
                         {plan.features.map((feature, featureIndex) => (
@@ -260,6 +273,7 @@ Thank you for your time.`)}`}
                           </motion.div>
                         ))}
                       </div>
+
                       {/* CTA Button */}
                       <motion.a
                         href={`https://wa.me/919966907000?text=${encodeURIComponent(`Namaste Abhishek! 🙏
@@ -276,14 +290,16 @@ Please let me know your available slots and the booking process.
 Thank you for your time.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-black py-2.5 px-4 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 block text-center"
+                        className="w-full bg-gradient-to-r from-spiritual-gold to-yellow-400 text-deep-indigo font-black py-2.5 px-4 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 glow-gold text-center text-sm whitespace-nowrap flex-shrink-0 relative z-10 drop-shadow-lg"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
                         Book This Plan
                       </motion.a>
+
                       {/* Hover Glow Effect */}
                       <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${plan.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                      
                       {/* Corner Decorations */}
                       <div className="absolute top-3 right-3 w-1.5 h-1.5 bg-spiritual-gold/50 rounded-full group-hover:bg-spiritual-gold transition-colors duration-300" />
                       <div className="absolute bottom-3 left-3 w-1 h-1 bg-spiritual-gold/30 rounded-full group-hover:bg-spiritual-gold transition-colors duration-300" />
@@ -294,45 +310,42 @@ Thank you for your time.`)}`}
             </motion.div>
           </div>
 
-          {/* Navigation Arrows and Dots only if there are multiple plans */}
-          {pricingPlans.length > 1 && (
-            <>
-              <motion.button
-                onClick={prevSlide}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-spiritual-gold/30 hover:bg-white/30 transition-all duration-300 z-20"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <ChevronLeft className="w-5 h-5 text-spiritual-gold" />
-              </motion.button>
+          {/* Navigation Arrows */}
+          <motion.button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-spiritual-gold/30 hover:bg-white/30 transition-all duration-300 z-10"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ChevronLeft className="w-5 h-5 text-spiritual-gold" />
+          </motion.button>
 
-              <motion.button
-                onClick={nextSlide}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-spiritual-gold/30 hover:bg-white/30 transition-all duration-300 z-20"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <ChevronRight className="w-5 h-5 text-spiritual-gold" />
-              </motion.button>
+          <motion.button
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-spiritual-gold/30 hover:bg-white/30 transition-all duration-300 z-10"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ChevronRight className="w-5 h-5 text-spiritual-gold" />
+          </motion.button>
 
-              {/* Dots Indicator */}
-              <div className="flex justify-center mt-6 space-x-2">
-                {pricingPlans.map((_, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentSlide
-                        ? 'bg-spiritual-gold scale-125'
-                        : 'bg-spiritual-gold/30 hover:bg-spiritual-gold/50'
-                    }`}
-                    whileHover={{ scale: 1.2 }}
-                  />
-                ))}
-              </div>
-            </>
-          )}
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {pricingPlans.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-spiritual-gold scale-125'
+                    : 'bg-spiritual-gold/30 hover:bg-spiritual-gold/50'
+                }`}
+                whileHover={{ scale: 1.2 }}
+              />
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   )
