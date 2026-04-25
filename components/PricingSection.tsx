@@ -18,7 +18,7 @@ const PricingSection = () => {
   {
     id: 1,
     title: "General Consultation",
-    price: "49",
+    price: "4",
     duration: "1 hr",
     icon: Clock,  // or whatever icon you want
     features: [
@@ -30,22 +30,6 @@ const PricingSection = () => {
     color: "from-blue-500 to-blue-600",
     delay: 0,
     description: "A one-hour session for clarity on your areas of concern."
-  },
-  {
-    id: 2,
-    title: "Advance Consultation",
-    price: "90",
-    duration: "2 hr",
-    icon: Star, // You may keep the icon or choose a new one
-    features: [
-      "In-depth, extended session covering your life in detail",
-      "Comprehensive chart analysis",
-      "Long-term planning and advanced remedies",
-      "Time for multiple topics and deeper guidance",
-    ],
-    color: "from-purple-500 to-purple-600",
-    delay: 0.1,
-    description: "A thorough two-hour consultation for advanced insight and planning."
   }
 ]
 
