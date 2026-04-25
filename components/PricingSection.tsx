@@ -19,7 +19,7 @@ const PricingSection = () => {
     id: 1,
     title: "General Consultation",
     price: "40",
-    duration: "1 hr",
+    duration: "45 min",
     icon: Clock,  // or whatever icon you want
     features: [
       "Personalized advice on your key questions",
