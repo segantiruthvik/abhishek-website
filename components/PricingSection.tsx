@@ -18,7 +18,7 @@ const PricingSection = () => {
   {
     id: 1,
     title: "General Consultation",
-    price: "4",
+    price: "40",
     duration: "1 hr",
     icon: Clock,  // or whatever icon you want
     features: [
